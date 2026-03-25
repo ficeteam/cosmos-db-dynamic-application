@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div>
+                    <form method="POST" action="{{url_for('Create')}}" >
+                        id:<input type="number" class="form-control" name="id" />
+                       
+                        firstname:<input type="text" class="form-control" name="fname" />
+                      
+                        lastname:<input type="text" class="form-control" name="lname" />
+                   
+                        state:<input type="text" class="form-control" name="state" />
+                      
+                        <input type="submit" class="btn btn-success" value="Submit" />
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div> 
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Id</th>
+                            <th>Fname</th>
+                            <th>Lname</th>
+                            <th>State</th>
+                        </tr>
+                        {% for row in data %}
+                        <tr>
+                            <td>{{row.id}}</td>
+                            <td>{{row.firstname}}</td>
+                            <td>{{row.lastname}}</td>
+                            <td>{{row.state}}</td>
+                        </tr>
+                        {%  endfor %}
+                    </table>
+                   
+                     
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
